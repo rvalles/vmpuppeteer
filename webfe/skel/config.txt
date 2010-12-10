@@ -1,0 +1,7 @@
+[global]
+server.socket_host: '0.0.0.0'
+server.socket_port: 15080
+tools.encode.on = True
+tools.encode.encoding: 'utf-8'
+tools.gzip.on = True
+tools.sessions.on = True 

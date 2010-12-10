@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vm id="1">
+	<name>django</name>
+	<description>This VM is a basic webserver for django use</description>
+	<cpu>
+		<number>4</number>
+	</cpu>
+	<ram>
+		<mb>1024</mb>
+	</ram>
+	<network>
+		<interface id="0">
+			<mac>0C:AA:BC:00:00:01</mac>
+			<ip>192.168.3.1</ip>
+		</interface>
+	</network>
+	<disks>
+		<disk>django</disk>
+	</disks>
+	<type>qemu</type>
+	<autostart>false</autostart>
+	<status>stopped</status>
+</vm>
+

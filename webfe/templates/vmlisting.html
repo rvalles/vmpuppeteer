@@ -1,0 +1,108 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="refresh" content="600">	
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<title>VM Server Web Frontend</title>
+	<style type="text/css">
+		body {
+			font-family: sans-serif, Helvetica;
+			margin: 5px 200px;
+			background-color:#FFD980;
+		}
+		a img {
+			text-decoration: none;
+			border: none;
+		}
+		.content {
+			background-color:#806C40;
+			height: 20em;
+			border: 1px;
+		}
+		.footer {
+			font-size: 0.6em;
+			background-color:gray;
+			padding-left: 4px;
+		}
+		.head {
+			background-color:#E6C373;
+			border: 1px solid;
+		}
+		.head h1 { 
+		   	text-align: center;	
+			
+		}	
+		.actions {
+			font-size: 0.7em;
+			margin-left:20px;	
+		}
+		.actions a {
+			background-color: gray;
+			border: 1px solid orange;
+			padding: 4px;
+			text-decoration:none;
+			color: black;
+			width: 8em;
+		}
+		.actions a:hover{
+			background-color: #E6C373;
+		}
+		.vmname {
+			color: orange;
+
+		}
+		.virtualmachine {
+			text-align: left;
+			margin-left: 4em;
+			margin-bottom: 10px;
+		}
+		.w3valid {
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="head">
+			<h1>VM Server Web Frontend</h1>			
+		</div>
+		<div class="vmachines-listing">
+			% for vm in vms:
+				<div class="virtualmachine">
+					<p class="vmname">${vm} (status: ${vms[vm]})</p>					
+					<p class="actions">
+					Available actions:
+					% if vms[vm]=="stopped":
+						<a href="startvm?vmname=${vm}">start</a>  
+					%endif
+					% if vms[vm]=="running":
+						<a href="stopvm?vmname=${vm}">stop</a>  
+						<a href="shutdownvm?vmname=${vm}">shutdown</a>  
+						<a href="rebootvm?vmname=${vm}">reboot</a>  
+						<a href="suspendvm?vmname=${vm}">suspend</a>  
+					%endif
+					% if vms[vm]=="suspended":
+						<a href="resumevm?vmname=${vm}">resume</a>  
+					%endif 
+					% if vms[vm]=="suspending":
+						Busy. No actions available until the machine finishes suspending!
+					%endif 
+					</p>
+				</div>
+			% endfor
+		</div>
+	</div>
+	<div class="footer">© 2010 Roc Vallès Domènech</div>
+	<div class="w3valid">
+		<p>
+			<a href="http://validator.w3.org/check?uri=referer">
+				<img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict">
+			</a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+				<img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
+			</a>
+		</p>
+
+	</div>
+</body>
+</html>

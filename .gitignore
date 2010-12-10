@@ -1,0 +1,13 @@
+*.pyc
+*.backup
+*.qcow
+*.qcow2
+*.iso
+TODO
+server/backup/
+server/vm/*
+server/config.xml
+server/disks.xml
+server/kill.sh
+test/
+webfe/config.txt

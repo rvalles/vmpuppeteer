@@ -1,0 +1,51 @@
+vmpuppeteer
+===========
+This is vmpuppeteer, a virtual machine server which isn't tied to a single vm
+implementation.
+
+It's targeted at having a simple mechanism for managing virtual machines which
+can be controlled from an XMLRPC interface.
+
+Configuration, Virtual machines and the disk database are defined in XML,
+following XML Schema skeletons.
+
+It currently supports Qemu and, by extension, KVM.
+
+A client and a web frontend using cherrypy and mako are provided.
+
+The original version of vmpuppeteer was written as a project (TFC) during my
+comp-sci studies in Universitat Oberta de Catalunya.
+
+
+Cloning
+-------
+
+    git clone git://github.com/rvalles/vmpuppeteer
+
+
+Installing
+----------
+For the server to run, libxml2 and its bindings should be installed and the
+config.xml and disks.xml configuration files should exist. Examples can be
+found in the skel directory.
+
+The web frontend needs the cherrypy http framework and the mako template
+engine properly installed and the config.txt configuration file should exist.
+An example can be found in the skel directory.
+
+
+Using
+-----
+To run server, client or web frontend launch main.py on their respective
+directories.
+
+Client and web frontend need parameters to work. Use --help as parameter for 
+more information.
+
+Disks and vm definition files can be added through the client. Refer to the
+example vm definitions found in the skel dir.
+
+
+-------
+Roc Vallès.
+<vallesroc @.aaa@ @gmail.com>

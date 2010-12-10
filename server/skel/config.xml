@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<vmconfig>
+<bind>
+	<ip>0.0.0.0</ip>
+	<port>15071</port>
+</bind>
+<path>vm</path>
+<diskspath>disks.xml</diskspath>
+<auth>
+	<login>admin</login>
+	<passwd>password</passwd>
+</auth>
+</vmconfig>

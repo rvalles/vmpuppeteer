@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="vmconfig">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="bind">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ip" type="xs:string"/>
+						<xs:element name="port" type="xs:integer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="path" type="xs:string"/>
+			<xs:element name="diskspath" type="xs:string"/>
+			<xs:element name="auth">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="login" type="xs:string"/>
+						<xs:element name="passwd" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+</xs:schema>
